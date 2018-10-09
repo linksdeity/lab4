@@ -63,13 +63,23 @@ namespace GrandCircusLab4
 
                     check = Console.ReadLine();
 
-                    if (Regex.IsMatch(check.ToLower(), "[y n]"))
+                    if (check.Length > 1)
+                    {
+                        Console.WriteLine("Please just enter 'y' or 'n'");
+                        continue;
+                    }
+
+                    if (Regex.IsMatch(check.ToLower(), @"[y n]"))
                     {
                         break;
                     }
+                    else
+                    {
+                        Console.WriteLine("Please just enter 'y' or 'n'");
+                    }
                 }
 
-                if(check.ToLower() == "n")
+                if(check.ToLower() != "y")
                 {
                     Console.Clear();
                     Console.WriteLine("\n\nGOODBYE!!!!");
